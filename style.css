@@ -56,6 +56,13 @@ body {
   right: 0;
   z-index: 2;
 }
+.top__image-6 {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+}
 
 .center {
   padding-left: calc(50% - 600px);
@@ -74,7 +81,6 @@ body {
 }
 .header__title {
   font-size: 64px;
-  width: 769px;
   font-weight: 700;
   line-height: 100%;
 }
@@ -138,6 +144,9 @@ body {
   flex-direction: column;
   gap: 24px;
 }
+.midle__mobile {
+  display: none;
+}
 .midle__title {
   font-weight: 700;
   font-size: 64px;
@@ -163,6 +172,10 @@ body {
 .midle__link:hover {
   transform: scale(1.05);
   transition: transform 0.3s ease-in-out;
+}
+.midle__product-box-2 {
+  display: none;
+  margin-top: 145px;
 }
 
 .product {
@@ -198,7 +211,158 @@ body {
 }
 .product__name {
   margin-top: 16px;
-  color: black;
   font-size: 32px;
   font-weight: 700;
+  color: black;
+}
+
+@media (max-width: 767px) {
+  .main-wrapper__image {
+    height: 51px;
+  }
+  .top {
+    padding: 147px 0;
+    justify-content: center;
+    display: flex;
+    height: 668px;
+  }
+  .top__image-3 {
+    width: 21px;
+    height: 21px;
+    margin-left: -60px;
+    top: 64px;
+  }
+  .top__image {
+    width: 35px;
+    height: 35px;
+    margin-left: -20px;
+    top: 97px;
+  }
+  .top__image-5 {
+    width: 18px;
+    height: 18px;
+    margin-right: -355px;
+    bottom: 69px;
+  }
+  .top__image-4 {
+    width: 39px;
+    height: 41px;
+    margin-right: -293px;
+    bottom: 26px;
+  }
+  .top__image-1 {
+    display: none;
+  }
+  .top__image-6 {
+    display: block;
+  }
+  .header {
+    text-align: center;
+    gap: 36px;
+  }
+  .header__title {
+    font-size: 40px;
+    width: 262px;
+    margin-left: 17px;
+    line-height: 47px;
+  }
+  .header__description {
+    font-size: 16px;
+    width: 296px;
+  }
+  .header__btn {
+    width: 285px;
+    height: 55px;
+    font-size: 16px;
+  }
+  .midle {
+    margin-top: 51px;
+    height: 3740px;
+    display: flex;
+    justify-content: center;
+  }
+  .midle__image {
+    display: none;
+  }
+  .midle__image-7 {
+    display: none;
+  }
+  .midle__image-8 {
+    display: none;
+  }
+  .midle__mobile {
+    display: block;
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+    margin-left: -90px;
+    margin-top: -48px;
+  }
+  .midle__title {
+    display: none;
+  }
+  .midle__description {
+    display: none;
+  }
+  .midle__product-box {
+    display: none;
+  }
+  .midle__product-box-2 {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .product-2 {
+    background-color: white;
+    border-radius: 30px;
+    width: 378px;
+    height: 528px;
+    border: none;
+    outline: none;
+    width: 343px;
+  }
+  .product-2_1 {
+    height: 567px;
+  }
+  .product-2_2 {
+    height: 606px;
+  }
+  .product-2_3 {
+    height: 626px;
+  }
+  .product-2__image {
+    width: 343px;
+  }
+  .product-2__name-box {
+    margin-left: 32px;
+    margin-top: 29px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .product-2__name {
+    color: black;
+    font-size: 32px;
+    font-weight: 700;
+  }
+  .product-2__description {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .product-2__btn {
+    border: 1px solid black;
+    color: white;
+    background-color: black;
+    border-radius: 60px;
+    display: inline-block;
+    height: 55px;
+    width: 285px;
+    margin-top: 32px;
+    margin-left: 29px;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    padding-top: 16px;
+  }
 }/*# sourceMappingURL=style.css.map */
