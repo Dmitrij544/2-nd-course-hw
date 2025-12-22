@@ -1,57 +1,63 @@
-/*/*Задание №1*/
-let a = 10;
-alert(a);
-a = 20;
-alert(a);
+/*Задание №1*/
+let password = 'пароль';
+let userGuess = prompt('Введите пароль');
+
+if (userGuess === password) {
+    alert('Пароль введен верно');
+} else {
+    alert('Пароль введен неверно');
+}
 
 /*Задание №2*/
-let firstIphoneYear = 2007;
-alert(firstIphoneYear);
+let c = 0;
+
+if (c > 0 && c < 10) {
+    alert('Верно'); 
+} else {
+    alert('Неверно'); 
+}
 
 /*Задание №3*/
-let creatorName = "Brendan Eich";
-alert(creatorName);
+let d = 150;
+let e = 50;  
+
+if (d > 100 || e > 100) {
+    alert('Верно');
+} else {
+    alert('Неверно');
+}
 
 /*Задание №4*/
-let nam1 = 10;
-let nam2 = 2;
-alert(nam1 + nam2);
-alert(nam1 - nam2);
-alert(nam1 * nam2);
-alert(nam1 / nam2);
+let a = '2';
+let b = '3';
+alert(+a + +b);
 
 /*Задание №5*/
-let result = 2 ** 5; 
-alert(result);
-            
-/*Задание №6*/
-let a1 = 9;
-let b = 2;
-let remainder = a1 % b;
-alert(remainder);
-            
-/*Задание №7*/
-let num = 1;
-num += 5;
-num -= 3;
-num *= 7; 
-num /= 3;
-num++;    
-num--;   
-alert(num); 
+let monthNumber = Number(prompt('Введите номер месяца (от 1 до 12):'));
 
-/*Задание №8*/
-let age = prompt("Сколько вам лет?");
-alert(age);
-
-/*Задание №9*/
-let user = {
-name: "Иван",
-age: 30,
-isAdmin: true 
-};
-
-/*Задание №10*/
-let userName = prompt("Как вас зовут?");
-let greetingMessage = `Привет, ${userName}!`;
-alert(greetingMessage);
+if (monthNumber > 12 || monthNumber < 1) {
+    alert('Ошибка: в году всего 12 месяцев.');
+} else {
+    switch (monthNumber) {
+        case 12:
+        case 1:
+        case 2:
+            alert('Зима');
+            break;
+        case 3:
+        case 4:
+        case 5:
+            alert('Весна');
+            break;
+        case 6:
+        case 7:
+        case 8:
+            alert('Лето');
+            break;
+        case 9:
+        case 10:
+        case 11:
+            alert('Осень');
+            break;
+    }
+}
