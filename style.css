@@ -219,7 +219,7 @@ body {
 
 .bottom {
   background-image: url(./img/Rectangle.jpg);
-  height: 3545px;
+  height: 3500px;
   padding-top: 46px;
   position: relative;
 }
@@ -235,13 +235,13 @@ body {
 }
 .bottom__image-3 {
   position: absolute;
-  margin-top: 3356px;
+  margin-top: 3306px;
   margin-left: 1200px;
 }
 .bottom__image-4 {
   position: absolute;
-  margin-top: 3414px;
-  margin-left: 1152px;
+  margin-top: 3357px;
+  margin-left: 1142px;
 }
 .bottom__title {
   font-weight: 700;
@@ -289,7 +289,7 @@ body {
   background-color: black;
   color: white;
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 600;
   text-align: center;
   padding-top: 16px;
 }
@@ -471,5 +471,8 @@ body {
   }
   .bottom__title {
     font-size: 16px;
+  }
+  .footer__title {
+    height: 100px;
   }
 }/*# sourceMappingURL=style.css.map */
