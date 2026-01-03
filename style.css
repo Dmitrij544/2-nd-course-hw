@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   margin: 0;
@@ -308,6 +309,60 @@ body {
 .footer__title {
   font-weight: 600px;
   font-size: 24px;
+}
+
+/* Фоновая подложка модального окна */
+.game-modal {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Темный фон */
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px); /* Размытие заднего плана */
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  /* Контентная область окна */
+  /* Кнопка закрытия (крестик) */
+}
+.game-modal__content {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+.game-modal__close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+}
+.game-modal__input-group {
+  margin: 20px 0;
+}
+.game-modal__input-group input {
+  padding: 10px;
+  width: 70px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+.game-modal__input-group button {
+  padding: 10px 20px;
+  background: #000; /* Подстройте под цвет кнопок вашего сайта */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 @media (max-width: 767px) {

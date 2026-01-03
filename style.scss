@@ -352,4 +352,60 @@ body {
     }
 }
 
+/* Фоновая подложка модального окна */
+.game-modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Темный фон */
+    backdrop-filter: blur(5px);   /* Размытие заднего плана */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+
+    /* Контентная область окна */
+    &__content {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        position: relative;
+        width: 90%;
+    max-width: 400px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    /* Кнопка закрытия (крестик) */
+    &__close {
+        position: absolute;
+        top: 15px; right: 20px;
+        font-size: 28px;
+        cursor: pointer;
+        color: #333;
+    }
+
+    &__input-group {
+        margin: 20px 0;
+    }
+
+    &__input-group input {
+        padding: 10px;
+        width: 70px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        margin-right: 10px;
+    }
+
+    &__input-group button {
+        padding: 10px 20px;
+        background: #000; /* Подстройте под цвет кнопок вашего сайта */
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+}
+
 @import "mobile";

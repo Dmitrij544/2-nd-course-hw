@@ -174,10 +174,25 @@
                                 <p class="product-3__name">Угадай число</p>
                                 <p class="product-3__description">Попробуй угадать случайное<br>число от 1 до 100.</p>
                             </section>
-                            <a href="" class="product-3__btn">Играть!</a>
+                            <a href="javascript:void(0)" id="openGame" class="product-3__btn">Играть!</a>
                         </section>
                         <img src="./img/namber-7.svg" alt="star">
                     </article>
+                    <div class="game-modal" id="gameModal">
+                        <div class="game-modal__content">
+                            <span class="game-modal__close" id="closeModal">&times;</span>
+                            <h2>Угадай число</h2>
+                            <p>Я загадал число от 1 до 100.</p>
+                            
+                            <div class="game-modal__input-group">
+                                <input type="number" id="userGuess" placeholder="50" min="1" max="100">
+                                <button id="checkBtn">Проверить</button>
+                            </div>
+
+                            <p id="gameMessage"></p>
+                            <button id="resetBtn" style="display:none;">Играть снова</button>
+                        </div>
+                    </div>
                     <article id="article-2" class="product-3 product-3_1">
                         <img src="./img/namber-8.svg" alt="star">
                         <section class="product-3__btn-box">
