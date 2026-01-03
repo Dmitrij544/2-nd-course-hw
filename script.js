@@ -1,5 +1,4 @@
 window.onload = function() {
-    // Весь код игры теперь внутри этой функции
     
     const modal = document.getElementById('gameModal');
     const openBtn = document.getElementById('openGame');
@@ -12,19 +11,16 @@ window.onload = function() {
     let randomNumber;
     let attempts = 0;
 
-    // Функция открытия
     openBtn.addEventListener('click', function(e) {
-        e.preventDefault(); // Запрещаем странице прыгать вверх при клике на ссылку
+        e.preventDefault(); 
         modal.style.display = 'flex';
         initGame();
     });
 
-    // Функция закрытия
     closeBtn.addEventListener('click', function() {
         modal.style.display = 'none';
     });
 
-    // Функция проверки
     checkBtn.addEventListener('click', function() {
         const userGuess = Number(input.value);
         attempts++;

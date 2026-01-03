@@ -340,31 +340,17 @@ body {
     }
 }
 
-.footer {
-    background-image: url(./img/Rectangle.svg);
-    height: 150px;
-    text-align: center;
-    padding: 64px;
-
-    &__title {
-        font-weight: 600px;
-        font-size: 24px;
-    }
-}
-
-/* Фоновая подложка модального окна */
 .game-modal {
-    display: none; /* Скрыто по умолчанию */
+    display: none; 
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Темный фон */
-    backdrop-filter: blur(5px);   /* Размытие заднего плана */
+    background: rgba(0, 0, 0, 0.7); 
+    backdrop-filter: blur(5px);   
     z-index: 1000;
     justify-content: center;
     align-items: center;
 
-    /* Контентная область окна */
     &__content {
         background: white;
         padding: 30px;
@@ -376,7 +362,6 @@ body {
         box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
 
-    /* Кнопка закрытия (крестик) */
     &__close {
         position: absolute;
         top: 15px; right: 20px;
@@ -399,13 +384,25 @@ body {
 
     &__input-group button {
         padding: 10px 20px;
-        background: #000; /* Подстройте под цвет кнопок вашего сайта */
+        background: #000; 
         color: white;
         border: none;
         border-radius: 8px;
         cursor: pointer;
     }
 
+}
+
+.footer {
+    background-image: url(./img/Rectangle.svg);
+    height: 150px;
+    text-align: center;
+    padding: 64px;
+
+    &__title {
+        font-weight: 600px;
+        font-size: 24px;
+    }
 }
 
 @import "mobile";
