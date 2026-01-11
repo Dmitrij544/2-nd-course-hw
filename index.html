@@ -174,7 +174,7 @@
                                 <p class="product-3__name">Угадай число</p>
                                 <p class="product-3__description">Попробуй угадать случайное<br>число от 1 до 100.</p>
                             </section>
-                            <a href="javascript:void(0)" id="openGame" class="product-3__btn">Играть!</a>
+                            <a id="openGame" href="javascript:void(0)" class="product-3__btn">Играть!</a>
                         </section>
                         <img src="./img/namber-7.svg" alt="star">
                     </article>
@@ -200,9 +200,19 @@
                                 <p class="product-3__name">Простая арифметика</p>
                                 <p class="product-3__description">Попробуй решить простые арифметические задачи.</p>
                             </section>
-                            <a href="" class="product-3__btn">Играть!</a>
+                            <a id="math-game-btn" href="#" class="product-3__btn">Играть!</a>
                         </section>
                     </article>
+                    <div id="math-modal" class="math-modal-overlay">
+                        <div class="math-modal-content">
+                            <span class="math-close">&times;</span>
+                            <h2 class="math-title">Реши задачу</h2>
+                            <div id="math-question" class="math-question"></div>
+                            <input type="number" id="math-answer" class="math-input" placeholder="?">
+                            <button id="math-check" class="math-submit-btn">Проверить</button>
+                            <p id="math-message" class="math-message"></p>
+                        </div>
+                    </div>
                     <article id="article-3" class="product-3 product-3_1">
                         <section class="product-3__btn-box">
                             <section class="product-3__name-box">

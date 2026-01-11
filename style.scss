@@ -358,7 +358,7 @@ body {
         text-align: center;
         position: relative;
         width: 90%;
-    max-width: 400px;
+        max-width: 400px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
 
@@ -393,6 +393,69 @@ body {
 
 }
 
+.math-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.math-modal-content {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.math-close {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #888;
+}
+
+.math-question {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #333;
+}
+
+.math-input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.5rem;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.math-submit-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+.math-submit-btn:hover { background: #218838; }
+
+.math-message { margin-top: 15px; font-weight: 500; height: 20px; }
+
 .footer {
     background-image: url(./img/Rectangle.svg);
     height: 150px;
@@ -406,3 +469,4 @@ body {
 }
 
 @import "mobile";
+@import "tablet"
