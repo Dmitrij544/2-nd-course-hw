@@ -219,10 +219,23 @@
                                 <p class="product-3__name">Переверни<br>текст</p>
                                 <p class="product-3__description">Попробуй ввести текст, который<br> будет перевёрнут.</p>
                             </section>
-                            <a href="" class="product-3__btn">Играть!</a>
+                            <a href="javascript:void(0)" id="playReverseGame" class="product-3__btn">Играть!</a>
                         </section>
                         <img src="./img/namber-9.svg" alt="star">
                     </article>
+                    <div id="reverse-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; align-items: center; justify-content: center;">
+                        <div style="background: #fff; padding: 25px; border-radius: 15px; text-align: center; color: #000; width: 300px; position: relative;">
+                            <h3 style="margin-top: 0;">Переверни текст</h3>
+                            <input type="text" id="reverseInput" placeholder="Введите текст" style="width: 100%; padding: 10px; margin: 15px 0; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+                            <button id="reverseAction" class="product-3__btn" style="border: none; cursor: pointer; width: 100%;">Перевернуть</button>
+        
+                            <div style="margin-top: 15px; background: #f0f0f0; padding: 10px; border-radius: 5px; min-height: 20px;">
+                                <p id="reverseResult" style="margin: 0; font-weight: bold; word-break: break-all; color: #333;"></p>
+                            </div>
+        
+                            <button id="reverseClose" style="margin-top: 15px; background: none; border: none; color: #777; cursor: pointer; text-decoration: underline;">Закрыть</button>
+                        </div>
+                    </div>
                     <article id="article-4" class="product-3 product-3_2 product-3_btm">
                         <img src="./img/namber-10.png" alt="star">
                         <section class="product-3__btn-box">
@@ -239,10 +252,18 @@
                                 <p class="product-3__name">Простая<br> викторина</p>
                                 <p class="product-3__description">Отвечай на вопросы викторины<br>с вариантами ответов.</p>
                             </section>
-                            <a href="" class="product-3__btn">Играть!</a>
+                            <a href="javascript:void(0)" id="quiz-start-btn" class="product-3__btn">Играть!</a>
                         </section>
                         <img src="./img/namber-11.svg" alt="star">
                     </article>
+                    <div id="quiz-modal" class="quiz-modal-overlay">
+                        <div class="quiz-modal-content">
+                            <h2 id="quiz-question">Вопрос появится здесь</h2>
+                            <div id="quiz-options" class="quiz-options-container"></div>
+                            <p id="quiz-message" class="quiz-message"></p>
+                            <button id="quiz-close" class="quiz-close-link">Закрыть</button>
+                        </div>
+                    </div>
                     <article id="article-6" class="product-3 product-3_3">
                         <img src="./img/namber-12.svg" alt="star">
                         <section class="product-3__btn-box">

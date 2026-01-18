@@ -456,6 +456,98 @@ body {
 
 .math-message { margin-top: 15px; font-weight: 500; height: 20px; }
 
+#reverse-modal {
+   
+    display: none; 
+    
+    
+    .product-3__btn {
+        background-color: #2e2e2e;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        display: inline-block;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: #4a4a4a;
+        }
+    }
+
+    input {
+        &:focus {
+            outline: 2px solid #000;
+            border-color: transparent;
+        }
+    }
+}
+
+.modal-active {
+    display: flex !important;
+}
+
+.quiz-modal-overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2500;
+    align-items: center;
+    justify-content: center;
+
+    .quiz-modal-content {
+        background: #fff;
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        width: 350px;
+        color: #000;
+
+        h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .quiz-options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            button {
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                background: #f9f9f9;
+                cursor: pointer;
+                font-size: 16px;
+                transition: 0.2s;
+
+                &:hover {
+                    background: #e0e0e0;
+                }
+            }
+        }
+
+        .quiz-message {
+            margin-top: 15px;
+            font-weight: bold;
+            min-height: 20px;
+        }
+
+        .quiz-close-link {
+            margin-top: 20px;
+            background: none;
+            border: none;
+            color: #777;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}
+
 .footer {
     background-image: url(./img/Rectangle.svg);
     height: 150px;

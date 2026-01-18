@@ -103,148 +103,234 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 });
 
-/*Задание №1*/
-const number = [1, 5, 4, 10, 0, 3];
+/*Переверни текст*/
+document.addEventListener('DOMContentLoaded', () => {
+    
+    const modal = document.getElementById('reverse-modal');
+    const openBtn = document.getElementById('playReverseGame');
+    const closeBtn = document.getElementById('reverseClose');
+    const actionBtn = document.getElementById('reverseAction');
+    const inputField = document.getElementById('reverseInput');
+    const resultField = document.getElementById('reverseResult');
 
-for (const value of numbers) {
-  console.log(value);
-  if (value === 10) {
-    break;
-  }
-}
+    if (openBtn) {
+        openBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.classList.add('modal-active');
+            inputField.value = ''; 
+            resultField.textContent = ''; 
+        });
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('modal-active');
+        });
+    }
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.classList.remove('modal-active');
+        }
+    });
+
+    if (actionBtn) {
+        actionBtn.addEventListener('click', () => {
+            const text = inputField.value;
+
+            if (text.trim() === "") {
+                resultField.textContent = "Сначала введите текст!";
+                resultField.style.color = "red";
+                return;
+            }
+
+            const reversed = text.split('').reverse().join('');
+            
+            resultField.style.color = "#333";
+            resultField.textContent = reversed;
+        });
+    }
+});
+
+/*Викторина*/
+document.addEventListener('DOMContentLoaded', () => {
+    const quizModal = document.getElementById('quiz-modal');
+    const quizOpenBtn = document.getElementById('quiz-start-btn');
+    const quizCloseBtn = document.getElementById('quiz-close');
+    const questionElem = document.getElementById('quiz-question');
+    const optionsElem = document.getElementById('quiz-options');
+    const messageElem = document.getElementById('quiz-message');
+
+    const questions = [
+        { q: "Какая планета самая большая в Солнечной системе?", a: ["Марс", "Юпитер", "Сатурн"], correct: 1 },
+        { q: "Сколько будет 2 + 2 * 2?", a: ["6", "8", "4"], correct: 0 },
+        { q: "Какой химический элемент обозначается как Au?", a: ["Серебро", "Золото", "Медь"], correct: 1 }
+    ];
+
+    let currentQuestionIndex = 0;
+
+    function loadQuestion() {
+        messageElem.textContent = "";
+        const qData = questions[currentQuestionIndex];
+        questionElem.textContent = qData.q;
+        optionsElem.innerHTML = ""; 
+
+        qData.a.forEach((answer, index) => {
+            const btn = document.createElement('button');
+            btn.textContent = answer;
+            btn.onclick = () => checkAnswer(index);
+            optionsElem.appendChild(btn);
+        });
+    }
+
+    function checkAnswer(selectedIndex) {
+        if (selectedIndex === questions[currentQuestionIndex].correct) {
+            messageElem.style.color = "green";
+            messageElem.textContent = "Верно!";
+            
+            setTimeout(() => {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < questions.length) {
+                    loadQuestion();
+                } else {
+                    questionElem.textContent = "Викторина окончена!";
+                    optionsElem.innerHTML = "";
+                    messageElem.textContent = "Вы молодец!";
+                    currentQuestionIndex = 0; 
+                }
+            }, 1000);
+        } else {
+            messageElem.style.color = "red";
+            messageElem.textContent = "Неправильно, попробуй еще раз!";
+        }
+    }
+
+    if (quizOpenBtn) {
+        quizOpenBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            quizModal.style.display = 'flex';
+            currentQuestionIndex = 0;
+            loadQuestion();
+        });
+    }
+
+    quizCloseBtn.onclick = () => quizModal.style.display = 'none';
+
+    window.addEventListener('click', (e) => {
+        if (e.target === quizModal) quizModal.style.display = 'none';
+    });
+});
+
+/*Задание №1*/
+const str = 'js';
+const resul = str.toUpperCase();
+
+console.log(result); 
 
 /*Задание №2*/
-const array = [1, 5, 4, 10, 0, 3];
-const index = array.indexOf(4);
+function filterByStart(array, searchString) {
+    const searchLower = searchString.toLowerCase();
+    
+    return array.filter(item => 
+        item.toLowerCase().startsWith(searchLower)
+    );
+}
 
-console.log(index); 
+// Пример использования:
+const words = ['Apple', 'banana', 'Apricot', 'Orange', 'application'];
+const search = 'ap';
+
+const result = filterByStart(words, search);
+console.log(result); 
 
 /*Задание №3*/
-const numbe = [1, 3, 5, 10, 20];
-const resul = numbers.join(' ');
-
-console.log(result); 
+Math.floor(32.58884);
+Math.ceil(32.58884); 
+Math.round(32.58884); 
 
 /*Задание №4*/
-const matri = [];
+const numbers = [52, 53, 49, 77, 21, 32];
+console.log(Math.max(...numbers)); 
+console.log(Math.min(...numbers)); 
 
-for (let i = 0; i < 3; i++) {
-  const row = []; 
-  
-  for (let j = 0; j < 3; j++) {
-    row.push(1); 
-  }
-  
-  matrix.push(row);
+/*Задние №5*/
+function getRandomTen() {
+    
+    const randomNumber = Math.floor(Math.random() * 10) + 1;
+    console.log(randomNumber);
 }
 
-console.log(matrix);
-
-/*Задание №5*/
-const numb = [1, 1, 1];
-numbers.push(2, 2, 2);
-
-console.log(numbers); 
+// Вызов функции
+getRandomTen();
 
 /*Задание №6*/
-const arr = [9, 8, 7, 'a', 6, 5];
+function getRandomArray(n) {
+    const result = [];
+    
+    const arrayLength = Math.floor(n / 2);
 
-arr.sort(); 
+    for (let i = 0; i < arrayLength; i++) {
+        
+        const randomNum = Math.floor(Math.random() * (n + 1));
+        result.push(randomNum);
+    }
 
-arr.pop(); 
+    return result;
+}
 
-console.log(arr); 
+// Пример использования:
+console.log(getRandomArray(10)); 
+console.log(getRandomArray(7));  
 
 /*Задание №7*/
-const num = [9, 8, 7, 6, 5];
-
-const userGuess = Number(prompt('Угадайте число из массива:'));
-
-if (numbers.includes(userGuess)) {
-  alert('Угададал');
-} else {
-  alert('Не угадал');
+function getRandomInRange(min, max) {
+     
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+console.log(getRandomInRange(1, 10));  
+console.log(getRandomInRange(50, 100)); 
 
 /*Задание №8*/
-const str = 'abcdef';
-
-const resu = str.split('').reverse().join('');
-
-console.log(result); 
+console.log(new Date()); 
 
 /*Задание №9*/
-const matrix = [[1, 2, 3], [4, 5, 6]];
-const flatArray = matrix.flat();
 
-console.log(flatArray); 
+let currentDate = new Date();
+console.log("Сегодняшняя дата:", currentDate.toLocaleDateString());
 
-const nu = [3, 7, 1, 9, 4, 2, 8];
+let futureDate = new Date(currentDate);
+futureDate.setDate(futureDate.getDate() + 73);
 
-for (let i = 0; i < numbers.length - 1; i++) {
-  const sum = numbers[i] + numbers[i + 1];
-  console.log(`Сумма ${numbers[i]} и ${numbers[i + 1]} равна: ${sum}`);
-}
+console.log("Дата через 73 дня:", futureDate.toLocaleDateString())
 
 /*Задание №10*/
-const getSquares = (arr) => arr.map(num => num ** 2);
+function formatDateTime(date) {
+    
+    const dateOptions = {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    };
 
-const n = [2, 5, 8, 10];
-const squares = getSquares(numbers);
+    const weekdayOptions = { weekday: 'long' };
 
-console.log(squares); 
+    const timeOptions = {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+    };
 
-/*Задание №11*/
-const getWordLengths = (words) => words.map(word => word.length);
+    const dateStr = date.toLocaleDateString('ru-RU', dateOptions);
+    const weekdayStr = date.toLocaleDateString('ru-RU', weekdayOptions);
+    const timeStr = date.toLocaleTimeString('ru-RU', timeOptions);
 
-const strings = ['apple', 'banana', 'cherry'];
-const lengths = getWordLengths(strings);
-
-console.log(lengths); 
-
-/*задание №12*/
-const getLengths = (arr) => arr.map(str => str.length);
-
-const fruits = ['яблоко', 'банан', 'груша', 'киви'];
-const result = getLengths(fruits);
-
-console.log(result); 
-
-/*Задание №13*/
-const getNegativeNumbers = (numbers) => numbers.filter(num => num < 0);
-
-const data = [10, -5, 3, -2, 0, -8, 15];
-const negatives = getNegativeNumbers(data);
-
-console.log(negatives); 
-
-/*Задние №14*/
-
-const originalArray = [];
-for (let i = 0; i < 10; i++) {
- 
-  const randomNumber = Math.floor(Math.random() * 11);
-  originalArray.push(randomNumber);
+    return `Дата: ${dateStr} — это ${weekdayStr}.\nВремя: ${timeStr}`;
 }
 
-const evenArray = originalArray.filter(num => num % 2 === 0);
-
-console.log('Исходный массив:', originalArray);
-console.log('Массив с четными значениями:', evenArray);
-
-/*Задание №15*/
-
-const numbers = [];
-for (let i = 0; i < 6; i++) {
-
-  numbers.push(Math.floor(Math.random() * 10) + 1);
-}
-
-const sum = numbers.reduce((acc, curr) => acc + curr, 0);
-
-const average = sum / numbers.length;
-
-console.log('Сгенерированный массив:', numbers);
-console.log('Среднее арифметическое:', average.toFixed(2)); 
-
-
+const now = new Date();
+console.log(formatDateTime(now));
