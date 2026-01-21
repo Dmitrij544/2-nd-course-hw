@@ -162,12 +162,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const messageElem = document.getElementById('quiz-message');
 
     const questions = [
-        { q: "Какая планета самая большая в Солнечной системе?", a: ["Марс", "Юпитер", "Сатурн"], correct: 1 },
-        { q: "Сколько будет 2 + 2 * 2?", a: ["6", "8", "4"], correct: 0 },
-        { q: "Какой химический элемент обозначается как Au?", a: ["Серебро", "Золото", "Медь"], correct: 1 }
+        { q: "Какой цвет небо?", a: ["1. Красный", "2. Синий", "3. Зеленый"], correct: 2 },
+        { q: "Сколько дней в неделе?", a: ["1. Шесть", "2. Семь", "3. Восемь"], correct: 2 },
+        { q: "Сколько у человека пальцев на одной руке?", a: ["1. Четыре", "2. Пять", "3. Шесть"], correct: 2 }
     ];
 
-    let currentQuestionIndex = 0;
+    let currentQuestionIndex = 1;
 
     function loadQuestion() {
         messageElem.textContent = "";
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function checkAnswer(selectedIndex) {
-        if (selectedIndex === questions[currentQuestionIndex].correct) {
+        if ((selectedIndex + 1) === questions[currentQuestionIndex].correct) {
             messageElem.style.color = "green";
             messageElem.textContent = "Верно!";
             
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /*Задание №1*/
 const str = 'js';
-const resul = str.toUpperCase();
+const result = str.toUpperCase();
 
 console.log(result); 
 
@@ -240,7 +240,7 @@ function filterByStart(array, searchString) {
 const words = ['Apple', 'banana', 'Apricot', 'Orange', 'application'];
 const search = 'ap';
 
-const result = filterByStart(words, search);
+const filteredWords = filterByStart(words, search);
 console.log(result); 
 
 /*Задание №3*/
