@@ -152,38 +152,51 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-/*Викторина*/
+/* Викторина*/
 document.addEventListener('DOMContentLoaded', () => {
-    const quizOpenBtn = document.getElementById('quiz-start-btn');
-
-    const questions = [
-        { q: "Какой цвет небо?", a: ["1. Красный", "2. Синий", "3. Зеленый"], correct: 2 },
-        { q: "Сколько дней в неделе?", a: ["1. Шесть", "2. Семь", "3. Восемь"], correct: 2 },
-        { q: "Сколько у человека пальцев на одной руке?", a: ["1. Четыре", "2. Пять", "3. Шесть"], correct: 2 }
+   
+    const quiz = [
+        {
+            question: "Какой цвет небо?",
+            options: ["1. Красный", "2. Синий", "3. Зеленый"],
+            correctAnswer: 2
+        },
+        {
+            question: "Сколько дней в неделе?",
+            options: ["1. Шесть", "2. Семь", "3. Восемь"],
+            correctAnswer: 2
+        },
+        {
+            question: "Сколько у человека пальцев на одной руке?",
+            options: ["1. Четыре", "2. Пять", "3. Шесть"],
+            correctAnswer: 2
+        }
     ];
 
-    if (quizOpenBtn) {
-        quizOpenBtn.addEventListener('click', (e) => {
+    const quizBtn = document.getElementById('quiz-btn');
+
+    if (quizBtn) {
+        quizBtn.addEventListener('click', (e) => {
             e.preventDefault();
             
-            let score = 0; 
+            let correctCount = 0; 
 
-            for (let i = 0; i < questions.length; i++) {
-                const qData = questions[i];
+            for (let i = 0; i < quiz.length; i++) {
+                const currentQuestion = quiz[i];
                 
-                const fullQuestion = `${qData.q}\nВарианты:\n${qData.a.join('\n')}\n(Введите номер ответа)`;
-                
-                const userAnswer = prompt(fullQuestion);
+                const fullQuestionText = 
+                    currentQuestion.question + "\n" + 
+                    currentQuestion.options.join("\n") + "\n\n" + 
+                    "Введите номер правильного ответа:";
 
-                if (parseInt(userAnswer) === qData.correct) {
-                    alert("Верно! ✅");
-                    score++;
-                } else {
-                    alert(`Неверно ❌. Правильный ответ был: ${qData.correct}`);
+                const userAnswer = prompt(fullQuestionText);
+
+                if (parseInt(userAnswer) === currentQuestion.correctAnswer) {
+                    correctCount++;
                 }
             }
 
-            alert(`Викторина окончена! \nВаш результат: ${score} из ${questions.length}`);
+            alert("Викторина окончена!\nВаш результат: " + correctCount + " из " + quiz.length);
         });
     }
 });
