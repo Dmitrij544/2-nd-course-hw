@@ -154,12 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /*Викторина*/
 document.addEventListener('DOMContentLoaded', () => {
-    const quizModal = document.getElementById('quiz-modal');
     const quizOpenBtn = document.getElementById('quiz-start-btn');
-    const quizCloseBtn = document.getElementById('quiz-close');
-    const questionElem = document.getElementById('quiz-question');
-    const optionsElem = document.getElementById('quiz-options');
-    const messageElem = document.getElementById('quiz-message');
 
     const questions = [
         { q: "Какой цвет небо?", a: ["1. Красный", "2. Синий", "3. Зеленый"], correct: 2 },
@@ -167,58 +162,30 @@ document.addEventListener('DOMContentLoaded', () => {
         { q: "Сколько у человека пальцев на одной руке?", a: ["1. Четыре", "2. Пять", "3. Шесть"], correct: 2 }
     ];
 
-    let currentQuestionIndex = 1;
-
-    function loadQuestion() {
-        messageElem.textContent = "";
-        const qData = questions[currentQuestionIndex];
-        questionElem.textContent = qData.q;
-        optionsElem.innerHTML = ""; 
-
-        qData.a.forEach((answer, index) => {
-            const btn = document.createElement('button');
-            btn.textContent = answer;
-            btn.onclick = () => checkAnswer(index);
-            optionsElem.appendChild(btn);
-        });
-    }
-
-    function checkAnswer(selectedIndex) {
-        if ((selectedIndex + 1) === questions[currentQuestionIndex].correct) {
-            messageElem.style.color = "green";
-            messageElem.textContent = "Верно!";
-            
-            setTimeout(() => {
-                currentQuestionIndex++;
-                if (currentQuestionIndex < questions.length) {
-                    loadQuestion();
-                } else {
-                    questionElem.textContent = "Викторина окончена!";
-                    optionsElem.innerHTML = "";
-                    messageElem.textContent = "Вы молодец!";
-                    currentQuestionIndex = 0; 
-                }
-            }, 1000);
-        } else {
-            messageElem.style.color = "red";
-            messageElem.textContent = "Неправильно, попробуй еще раз!";
-        }
-    }
-
     if (quizOpenBtn) {
         quizOpenBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            quizModal.style.display = 'flex';
-            currentQuestionIndex = 0;
-            loadQuestion();
+            
+            let score = 0; 
+
+            for (let i = 0; i < questions.length; i++) {
+                const qData = questions[i];
+                
+                const fullQuestion = `${qData.q}\nВарианты:\n${qData.a.join('\n')}\n(Введите номер ответа)`;
+                
+                const userAnswer = prompt(fullQuestion);
+
+                if (parseInt(userAnswer) === qData.correct) {
+                    alert("Верно! ✅");
+                    score++;
+                } else {
+                    alert(`Неверно ❌. Правильный ответ был: ${qData.correct}`);
+                }
+            }
+
+            alert(`Викторина окончена! \nВаш результат: ${score} из ${questions.length}`);
         });
     }
-
-    quizCloseBtn.onclick = () => quizModal.style.display = 'none';
-
-    window.addEventListener('click', (e) => {
-        if (e.target === quizModal) quizModal.style.display = 'none';
-    });
 });
 
 /*Задание №1*/
