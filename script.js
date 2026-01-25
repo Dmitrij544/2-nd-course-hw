@@ -201,116 +201,126 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-/*Задание №1*/
-const str = 'js';
-const result = str.toUpperCase();
+/*Камень, Ножницы, Бумага*/
+function openRPS() {
+    const modal = document.getElementById('rpsModal');
+    if (modal) {
+        modal.style.display = 'flex'; 
+        document.getElementById('rpsResult').innerHTML = ""; 
+    }
+}
 
-console.log(result); 
+function closeRPS() {
+    const modal = document.getElementById('rpsModal');
+    if (modal) {
+        modal.style.display = 'none'; 
+    }
+}
+
+function playRPS(userChoice) {
+    const options = ["камень", "ножницы", "бумага"];
+    const computerChoice = options[Math.floor(Math.random() * 3)];
+    let result = "";
+
+    if (userChoice === computerChoice) {
+        result = "Ничья!";
+    } else if (
+        (userChoice === "камень" && computerChoice === "ножницы") ||
+        (userChoice === "ножницы" && computerChoice === "бумага") ||
+        (userChoice === "бумага" && computerChoice === "камень")
+    ) {
+        result = "Вы победили!";
+    } else {
+        result = "Вы проиграли!";
+    }
+
+    document.getElementById('rpsResult').innerHTML = `
+        <p>Вы: <b>${userChoice}</b> | ПК: <b>${computerChoice}</b></p>
+        <h3>${result}</h3>
+    `;
+}
+
+window.onclick = function(event) {
+    const modal = document.getElementById('rpsModal');
+    if (event.target == modal) {
+        closeRPS();
+    }
+}
+
+/*Задание №1*/
+const people = [
+   { name: 'Глеб', age: 29 },
+   { name: 'Анна', age: 17 },
+   { name: 'Олег', age: 7 },
+   { name: 'Оксана', age: 47 }
+];
+
+console.log(people.sort((a, b) => a.age - b.age));
 
 /*Задание №2*/
-function filterByStart(array, searchString) {
-    const searchLower = searchString.toLowerCase();
-    
-    return array.filter(item => 
-        item.toLowerCase().startsWith(searchLower)
-    );
+function isPositive(number) {
+    return number > 0;
 }
 
-// Пример использования:
-const words = ['Apple', 'banana', 'Apricot', 'Orange', 'application'];
-const search = 'ap';
-
-const filteredWords = filterByStart(words, search);
-console.log(result); 
-
-/*Задание №3*/
-Math.floor(32.58884);
-Math.ceil(32.58884); 
-Math.round(32.58884); 
-
-/*Задание №4*/
-const numbers = [52, 53, 49, 77, 21, 32];
-console.log(Math.max(...numbers)); 
-console.log(Math.min(...numbers)); 
-
-/*Задние №5*/
-function getRandomTen() {
-    
-    const randomNumber = Math.floor(Math.random() * 10) + 1;
-    console.log(randomNumber);
+function isMale(person) {
+    return person.gender === 'male';
 }
 
-// Вызов функции
-getRandomTen();
-
-/*Задание №6*/
-function getRandomArray(n) {
+function filter(array, ruleFunction) {
     const result = [];
-    
-    const arrayLength = Math.floor(n / 2);
 
-    for (let i = 0; i < arrayLength; i++) {
+    for (let i = 0; i < array.length; i++) {
         
-        const randomNum = Math.floor(Math.random() * (n + 1));
-        result.push(randomNum);
+        if (ruleFunction(array[i])) {
+            result.push(array[i]);
+        }
     }
 
     return result;
 }
 
-// Пример использования:
-console.log(getRandomArray(10)); 
-console.log(getRandomArray(7));  
+console.log(filter([3, -4, 1, 9], isPositive)); 
 
-/*Задание №7*/
-function getRandomInRange(min, max) {
-     
-    min = Math.ceil(min);
-    max = Math.floor(max);
+const people_1 = [
+   {name: 'Глеб', gender: 'male'},
+   {name: 'Анна', gender: 'female'},
+   {name: 'Олег', gender: 'male'},
+   {name: 'Оксана', gender: 'female'}
+];
+
+console.log(filter(people, isMale));
+
+/*Задание №3*/
+const intervalId = setInterval(() => {
+    console.log(new Date());
+}, 3000);
+
+setTimeout(() => {
+    clearInterval(intervalId); 
+    console.log("30 секунд прошло");
+}, 30000);
+
+/*Задание №4*/
+function delayForSecond(callback) {
     
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    setTimeout(callback, 1000);
 }
 
-console.log(getRandomInRange(1, 10));  
-console.log(getRandomInRange(50, 100)); 
+delayForSecond(function () {
+   console.log('Привет, Глеб!');
+});
 
-/*Задание №8*/
-console.log(new Date()); 
-
-/*Задание №9*/
-
-let currentDate = new Date();
-console.log("Сегодняшняя дата:", currentDate.toLocaleDateString());
-
-let futureDate = new Date(currentDate);
-futureDate.setDate(futureDate.getDate() + 73);
-
-console.log("Дата через 73 дня:", futureDate.toLocaleDateString())
-
-/*Задание №10*/
-function formatDateTime(date) {
-    
-    const dateOptions = {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric'
-    };
-
-    const weekdayOptions = { weekday: 'long' };
-
-    const timeOptions = {
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false
-    };
-
-    const dateStr = date.toLocaleDateString('ru-RU', dateOptions);
-    const weekdayStr = date.toLocaleDateString('ru-RU', weekdayOptions);
-    const timeStr = date.toLocaleTimeString('ru-RU', timeOptions);
-
-    return `Дата: ${dateStr} — это ${weekdayStr}.\nВремя: ${timeStr}`;
+/*Задание №5*/
+function delayForSecond(cb) {
+    setTimeout(() => {
+        console.log('Прошла одна секунда');
+        if(cb) {  cb(); }
+    }, 1000)
 }
 
-const now = new Date();
-console.log(formatDateTime(now));
+function sayHi (name) {
+    console.log('Привет, ${name}!');
+}
+
+delayForSecond(() => sayHi('Глеб'));
+

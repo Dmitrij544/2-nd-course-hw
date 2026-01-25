@@ -243,9 +243,22 @@
                                 <p class="product-3__name">Камень,<br>ножницы,<br>бумага</p>
                                 <p class="product-3__description">Сыграй в популярную игру<br>против компьютера.</p>
                             </section>
-                            <a href="" class="product-3__btn">Играть!</a>
+                            <a href="javascript:void(0)" onclick="openRPS()" class="product-3__btn">Играть!</a>
                         </section>
                     </article>
+                    <div id="rpsModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close-btn" onclick="closeRPS()">&times;</span>
+                            <h2>Камень, Ножницы, Бумага</h2>
+                            <p>Сделайте ваш ход:</p>
+                            <div class="choices">
+                                <button onclick="playRPS('камень')">Камень</button>
+                                <button onclick="playRPS('ножницы')">Ножницы</button>
+                                <button onclick="playRPS('бумага')">Бумага</button>
+                            </div>
+                            <div id="rpsResult" class="result-area"></div>
+                        </div>
+                    </div>
                     <article id="article-5" class="product-3 product-3_1">
                         <section class="product-3__btn-box">
                             <section class="product-3__name-box">
