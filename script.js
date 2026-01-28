@@ -203,22 +203,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /*Камень, Ножницы, Бумага*/
 function openRPS() {
-    const modal = document.getElementById('rpsModal');
-    if (modal) {
-        modal.style.display = 'flex'; 
-        document.getElementById('rpsResult').innerHTML = ""; 
-    }
-}
-
-function closeRPS() {
-    const modal = document.getElementById('rpsModal');
-    if (modal) {
-        modal.style.display = 'none'; 
-    }
-}
-
-function playRPS(userChoice) {
     const options = ["камень", "ножницы", "бумага"];
+    
+    let userChoice = prompt("Введите ваш ход: камень, ножницы или бумага");
+
+    if (userChoice === null) return;
+
+    userChoice = userChoice.toLowerCase().trim();
+
+    if (!options.includes(userChoice)) {
+        alert("Ошибка! Нужно ввести только: камень, ножницы или бумага");
+        return;
+    }
+
     const computerChoice = options[Math.floor(Math.random() * 3)];
     let result = "";
 
@@ -234,17 +231,7 @@ function playRPS(userChoice) {
         result = "Вы проиграли!";
     }
 
-    document.getElementById('rpsResult').innerHTML = `
-        <p>Вы: <b>${userChoice}</b> | ПК: <b>${computerChoice}</b></p>
-        <h3>${result}</h3>
-    `;
-}
-
-window.onclick = function(event) {
-    const modal = document.getElementById('rpsModal');
-    if (event.target == modal) {
-        closeRPS();
-    }
+    alert(`Ваш выбор: ${userChoice}\nВыбор ПК: ${computerChoice}\n\n${result}`);
 }
 
 /*Задание №1*/
