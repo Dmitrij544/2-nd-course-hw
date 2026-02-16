@@ -235,79 +235,87 @@ function openRPS() {
 }
 
 /*Задание №1*/
-const people = [
-   { name: 'Глеб', age: 29 },
-   { name: 'Анна', age: 17 },
-   { name: 'Олег', age: 7 },
-   { name: 'Оксана', age: 47 }
-];
+const title = document.querySelector('.section__title');
+const btn = document.querySelector('.section__btn');
 
-console.log(people.sort((a, b) => a.age - b.age));
+btn.textContent = 'Скрыть';
+
+btn.addEventListener('click', () => {
+    
+    if (title.style.display === 'none') {
+        title.style.display = 'block';
+        btn.textContent = 'Скрыть';
+    } else {
+        title.style.display = 'none';
+        btn.textContent = 'Показать';
+    }
+});
 
 /*Задание №2*/
-function isPositive(number) {
-    return number > 0;
-}
+const text = document.querySelector('.section1__text');
+const btn1 = document.querySelector('.section1__btn');
 
-function isMale(person) {
-    return person.gender === 'male';
-}
+btn1.textContent = 'Изменить цвет';
 
-function filter(array, ruleFunction) {
-    const result = [];
-
-    for (let i = 0; i < array.length; i++) {
-        
-        if (ruleFunction(array[i])) {
-            result.push(array[i]);
-        }
-    }
-
-    return result;
-}
-
-console.log(filter([3, -4, 1, 9], isPositive)); 
-
-const people_1 = [
-   {name: 'Глеб', gender: 'male'},
-   {name: 'Анна', gender: 'female'},
-   {name: 'Олег', gender: 'male'},
-   {name: 'Оксана', gender: 'female'}
-];
-
-console.log(filter(people, isMale));
+btn1.addEventListener('click', () => {
+    text.style.color = 'blue';
+    btn1.textContent = 'Цвет изменен';
+}, { once: true }); 
 
 /*Задание №3*/
-const intervalId = setInterval(() => {
-    console.log(new Date());
-}, 3000);
+const title2 = document.querySelector('.section2__title');
+const btn2 = document.querySelector('.section2__btn');
 
-setTimeout(() => {
-    clearInterval(intervalId); 
-    console.log("30 секунд прошло");
-}, 30000);
+btn2.textContent = 'Изменить текст';
+title2.textContent = 'Lorem';
+
+btn2.addEventListener('click', () => {
+    title2.textContent = 'Привет, мир!';
+    btn2.textContent = 'Текст изменён';
+}, { once: true }); 
 
 /*Задание №4*/
-function delayForSecond(callback) {
-    
-    setTimeout(callback, 1000);
-}
+const description = document.querySelectorAll('.description');
 
-delayForSecond(function () {
-   console.log('Привет, Глеб!');
+description.forEach((item) => {
+    item.textContent = 'Изменённый текст';
 });
 
 /*Задание №5*/
-function delayForSecond(cb) {
-    setTimeout(() => {
-        console.log('Прошла одна секунда');
-        if(cb) {  cb(); }
-    }, 1000)
-}
+const description1 = document.querySelectorAll('.description1');
 
-function sayHi (name) {
-    console.log('Привет, ${name}!');
-}
+description1.forEach((item) => {
+    item.textContent = 'Новый текст';
+});
 
-delayForSecond(() => sayHi('Глеб'));
+/*Задание №6*/
+const btn3 = document.querySelector('.btn3');
+const newDiv = document.createElement('div');
+newDiv.textContent = 'Новый элемент';
+
+btn3.textContent = 'Добавить элемент';
+
+btn3.addEventListener('click', () => {
+    document.body.appendChild(newDiv);
+    btn3.textContent = 'Элемент добавлен';
+}, { once: true }); 
+
+/*Задание №7*/
+const description2 = document.querySelector('.description2');
+const btn4 = document.querySelector('.btn4');
+
+btn4.textContent = 'Удалить элемент';
+
+btn4.addEventListener('click', () => {
+    description2.remove()
+    btn3.textContent = 'Элемент удалён';
+}, { once: true }); 
+
+
+
+
+
+
+
+
 
