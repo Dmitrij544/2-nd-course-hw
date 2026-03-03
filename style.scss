@@ -18,12 +18,39 @@ body {
     font-size: 16px;
 }
 
-.main-wrapper {
+.games-scroll {
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0;
+    font-weight: 600;
+    font-size: 30px;
+    background-color: #BCEC30;
+    position: absolute;
+    z-index: 3;
+}
+
+.scroll-content {
+    display: flex;
+    align-items: center;
+    gap: 51px;
+    padding: 5px 0;
+    animation: scroll-left 12s linear infinite;
+    white-space: nowrap;
+
     &__image {
-        position: absolute;
-        z-index: 3;
-        width: 167vw;  
-        height: 90px; 
+        height: 36px;
+        width: 36px;
+        margin-top: 17px;
+    }
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
     }
 }
 
@@ -32,7 +59,7 @@ body {
     height: 710px;
     padding: 196px 120px;
     position: relative;
-    z-index: 0;    
+    z-index: 0;
 
     &__image {
         position: absolute;
@@ -95,7 +122,7 @@ body {
         font-weight: 700;
         line-height: 100%;
     }
-     
+
     &__description {
         width: 720px;
         font-size: 24px;
@@ -112,7 +139,7 @@ body {
         color: white;
         text-align: center;
         padding-top: 16px;
-        font-weight: 600; 
+        font-weight: 600;
         border: 1px solid black;
     }
 
@@ -152,7 +179,7 @@ body {
         width: 584px;
         height: 584px;
     }
-    
+
     &__box {
         color: white;
         position: absolute;
@@ -178,7 +205,7 @@ body {
         line-height: 32px;
     }
 
-    &__product-box  {
+    &__product-box {
         margin-top: 364px;
         position: absolute;
         z-index: 3;
@@ -250,7 +277,7 @@ body {
     background-image: url(./img/Rectangle.jpg);
     height: 3500px;
     padding-top: 46px;
-    position: relative; 
+    position: relative;
 
     &__image {
         margin-top: 53px;
@@ -320,20 +347,26 @@ body {
         font-weight: 400;
         font-size: 24px;
     }
-     
-    &__btn {
-        width: 247px;
-        height: 66px;
-        border-radius: 60px;
-        background-color: black;
-        color: white;
-        font-size: 24px;
-        font-weight: 600;
-        text-align: center;
-        padding-top: 16px;
-    }
 
-    &__btn:hover {
+}
+
+.product-3__btn,
+.product-3__btn2,
+.product-3__btn3,
+.product-3__btn4,
+.product-3__btn5,
+.product-3__btn6 {
+    width: 247px;
+    height: 66px;
+    border-radius: 60px;
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 16px;
+
+    &:hover {
         color: black;
         background-color: white;
         border: 1px solid black;
@@ -341,12 +374,14 @@ body {
 }
 
 .game-modal {
-    display: none; 
+    display: none;
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.7); 
-    backdrop-filter: blur(5px);   
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
     z-index: 1000;
     justify-content: center;
     align-items: center;
@@ -359,12 +394,13 @@ body {
         position: relative;
         width: 90%;
         max-width: 400px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
 
     &__close {
         position: absolute;
-        top: 15px; right: 20px;
+        top: 15px;
+        right: 20px;
         font-size: 28px;
         cursor: pointer;
         color: #333;
@@ -384,7 +420,7 @@ body {
 
     &__input-group button {
         padding: 10px 20px;
-        background: #000; 
+        background: #000;
         color: white;
         border: none;
         border-radius: 8px;
@@ -396,8 +432,10 @@ body {
 .math-modal-overlay {
     display: none;
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.85);
     z-index: 1000;
     justify-content: center;
@@ -413,12 +451,13 @@ body {
     max-width: 400px;
     width: 90%;
     position: relative;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .math-close {
     position: absolute;
-    top: 15px; right: 20px;
+    top: 15px;
+    right: 20px;
     font-size: 30px;
     cursor: pointer;
     color: #888;
@@ -452,16 +491,22 @@ body {
     width: 100%;
 }
 
-.math-submit-btn:hover { background: #218838; }
+.math-submit-btn:hover {
+    background: #218838;
+}
 
-.math-message { margin-top: 15px; font-weight: 500; height: 20px; }
+.math-message {
+    margin-top: 15px;
+    font-weight: 500;
+    height: 20px;
+}
 
-#reverse-modal {
-   
-    display: none; 
-    
-    
-    .product-3__btn {
+.reverse-modal {
+
+    display: none;
+
+
+    .reverseAction {
         background-color: #2e2e2e;
         color: #fff;
         padding: 10px 20px;
@@ -487,7 +532,7 @@ body {
 }
 
 .quiz-modal-overlay {
-    display: none; 
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -549,14 +594,14 @@ body {
 }
 
 .modal {
-    display: none; 
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
-    z-index: 10000; 
+    z-index: 10000;
     justify-content: center;
     align-items: center;
 }
@@ -589,6 +634,19 @@ body {
         font-weight: 600px;
         font-size: 24px;
     }
+}
+
+.reverse-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
 }
 
 @import "mobile";

@@ -1,9 +1,26 @@
 @media (max-width: 1200px) {
-  .main-wrapper__image {
-    width: 150dvw;
-    height: 60dvh;
-    -o-object-fit: cover;
-       object-fit: cover;
+  .games-scroll {
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0;
+    font-weight: 600;
+    font-size: 16px;
+    background-color: #BCEC30;
+    position: absolute;
+    z-index: 3;
+  }
+  .scroll-content {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+    padding: 5px 0;
+    animation: scroll-left 12s linear infinite;
+    white-space: nowrap;
+  }
+  .scroll-content__image {
+    height: 19px;
+    width: 19px;
+    margin-top: 7px;
   }
   .top {
     padding: 147px 0;
@@ -137,7 +154,12 @@
     font-size: 16px;
     font-weight: 400;
   }
-  .product-2__btn {
+  .product-2__btn,
+  .product-2__btn2,
+  .product-2__btn3,
+  .product-2__btn4,
+  .product-2__btn5,
+  .product-2__btn6 {
     border: 1px solid black;
     color: white;
     background-color: black;

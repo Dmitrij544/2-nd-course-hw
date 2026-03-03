@@ -1,61 +1,69 @@
 /*Угадай число*/
 window.onload = function() {
     
-    const modal = document.getElementById('gameModal');
-    const openBtn = document.getElementById('openGame');
-    const closeBtn = document.getElementById('closeModal');
-    const checkBtn = document.getElementById('checkBtn');
-    const input = document.getElementById('userGuess');
-    const message = document.getElementById('gameMessage');
-    const resetBtn = document.getElementById('resetBtn');
+    const openBtns = document.querySelectorAll('.product-2__btn, .product-3__btn');
+    const modal = document.querySelector('.game-modal');
+    const closeBtn = document.querySelector('.game-modal__close');
+    const checkBtn = document.querySelector('.game-modal__btn');
+    const input = document.querySelector('.game-modal__input');
+    const message = document.querySelector('.game-modal__text');
+    const resetBtn = document.querySelector('.game-modal__btn2');
 
     let randomNumber;
     let attempts = 0;
 
-    openBtn.addEventListener('click', function(e) {
-        e.preventDefault(); 
-        modal.style.display = 'flex';
-        initGame();
+    openBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault(); 
+            modal.style.display = 'flex'; 
+            initGame();
+        });
     });
 
-    closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+    }
 
-    checkBtn.addEventListener('click', function() {
-        const userGuess = Number(input.value);
-        attempts++;
+    if (checkBtn) {
+        checkBtn.addEventListener('click', function() {
+            const userGuess = Number(input.value);
+            attempts++;
 
-        if (userGuess === randomNumber) {
-            message.textContent = `Победа! Угадано за ${attempts} попыток.`;
-            resetBtn.style.display = 'block';
-        } else if (userGuess > randomNumber) {
-            message.textContent = 'Меньше...';
-        } else {
-            message.textContent = 'Больше...';
-        }
-    });
+            if (userGuess === randomNumber) {
+                message.textContent = `Победа! Угадано за ${attempts} попыток.`;
+                resetBtn.style.display = 'block';
+            } else if (userGuess > randomNumber) {
+                message.textContent = 'Меньше...';
+            } else {
+                message.textContent = 'Больше...';
+            }
+        });
+    }
 
     function initGame() {
         randomNumber = Math.floor(Math.random() * 100) + 1;
         attempts = 0;
-        message.textContent = 'Удачи!';
-        input.value = '';
-        resetBtn.style.display = 'none';
+        if (message) message.textContent = 'Удачи!';
+        if (input) input.value = '';
+        if (resetBtn) resetBtn.style.display = 'none';
     }
 
-    resetBtn.addEventListener('click', initGame);
+    if (resetBtn) {
+        resetBtn.addEventListener('click', initGame);
+    }
 };
 
 /*Простая арифметика*/
 document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.getElementById('math-game-btn');
-    const modal = document.getElementById('math-modal');
+    const btns = document.querySelectorAll('.product-3__btn2, .product-2__btn2');
+    const modal = document.querySelector('.math-modal-overlay');
     const close = document.querySelector('.math-close');
-    const questionEl = document.getElementById('math-question');
-    const inputEl = document.getElementById('math-answer');
-    const checkBtn = document.getElementById('math-check');
-    const msgEl = document.getElementById('math-message');
+    const questionEl = document.querySelector('.math-question');
+    const inputEl = document.querySelector('.math-input');
+    const checkBtn = document.querySelector('.math-submit-btn');
+    const msgEl = document.querySelector('.math-message');
 
     let result = 0;
 
@@ -83,10 +91,12 @@ document.addEventListener('DOMContentLoaded', () => {
         msgEl.textContent = '';
     };
 
-    btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        modal.style.display = 'flex';
-        generateTask();
+    btns.forEach(oneBtn => {
+        oneBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.style.display = 'flex';
+            generateTask();
+        });
     });
 
     close.onclick = () => modal.style.display = 'none';
@@ -106,50 +116,50 @@ document.addEventListener('DOMContentLoaded', () => {
 /*Переверни текст*/
 document.addEventListener('DOMContentLoaded', () => {
     
-    const modal = document.getElementById('reverse-modal');
-    const openBtn = document.getElementById('playReverseGame');
-    const closeBtn = document.getElementById('reverseClose');
-    const actionBtn = document.getElementById('reverseAction');
-    const inputField = document.getElementById('reverseInput');
-    const resultField = document.getElementById('reverseResult');
+    const openBtns = document.querySelectorAll('.product-2__btn3, .product-3__btn3');
+    
+    const modal = document.querySelector('.reverse-modal');
+    const closeBtn = document.querySelector('.reverseClose');
+    const actionBtn = document.querySelector('.reverseAction');
+    const inputField = document.querySelector('.reverseInput');
+    const resultField = document.querySelector('.reverseResult');
 
-    if (openBtn) {
-        openBtn.addEventListener('click', (e) => {
+    openBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
             e.preventDefault();
-            modal.classList.add('modal-active');
-            inputField.value = ''; 
-            resultField.textContent = ''; 
+            if (modal) {
+                modal.style.display = 'flex'; 
+                inputField.value = ''; 
+                resultField.textContent = ''; 
+            }
         });
-    }
+    });
 
     if (closeBtn) {
         closeBtn.addEventListener('click', () => {
-            modal.classList.remove('modal-active');
+            modal.style.display = 'none';
         });
     }
-
-    window.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            modal.classList.remove('modal-active');
-        }
-    });
 
     if (actionBtn) {
         actionBtn.addEventListener('click', () => {
             const text = inputField.value;
-
             if (text.trim() === "") {
                 resultField.textContent = "Сначала введите текст!";
                 resultField.style.color = "red";
                 return;
             }
-
             const reversed = text.split('').reverse().join('');
-            
             resultField.style.color = "#333";
             resultField.textContent = reversed;
         });
     }
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 });
 
 /* Викторина*/
@@ -173,10 +183,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
-    const quizBtn = document.getElementById('quiz-btn');
+    const quizBtns = document.querySelectorAll('.product-2__btn6, .product-3__btn6');
 
-    if (quizBtn) {
-        quizBtn.addEventListener('click', (e) => {
+    quizBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
             e.preventDefault();
             
             let correctCount = 0; 
@@ -185,20 +195,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 const currentQuestion = quiz[i];
                 
                 const fullQuestionText = 
-                    currentQuestion.question + "\n" + 
-                    currentQuestion.options.join("\n") + "\n\n" + 
+                    `${currentQuestion.question}\n` + 
+                    `${currentQuestion.options.join("\n")}\n\n` + 
                     "Введите номер правильного ответа:";
 
                 const userAnswer = prompt(fullQuestionText);
+
+                if (userAnswer === null) break;
 
                 if (parseInt(userAnswer) === currentQuestion.correctAnswer) {
                     correctCount++;
                 }
             }
 
-            alert("Викторина окончена!\nВаш результат: " + correctCount + " из " + quiz.length);
+            alert(`Викторина окончена!\nВаш результат: ${correctCount} из ${quiz.length}`);
         });
-    }
+    });
 });
 
 /*Камень, Ножницы, Бумага*/
@@ -233,89 +245,28 @@ function openRPS() {
 
     alert(`Ваш выбор: ${userChoice}\nВыбор ПК: ${computerChoice}\n\n${result}`);
 }
-
-/*Задание №1*/
-const title = document.querySelector('.section__title');
-const btn = document.querySelector('.section__btn');
-
-btn.textContent = 'Скрыть';
-
-btn.addEventListener('click', () => {
+/*Генератор случайных цветов*/
+document.addEventListener('DOMContentLoaded', () => {
     
-    if (title.style.display === 'none') {
-        title.style.display = 'block';
-        btn.textContent = 'Скрыть';
-    } else {
-        title.style.display = 'none';
-        btn.textContent = 'Показать';
-    }
+    const colorBtns = document.querySelectorAll('.product-2__btn5, .product-3__btn5');
+
+    const getRandomColor = () => {
+        return '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+    };
+
+    colorBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            const card = btn.closest('.product-2_3, .product-3_3');
+            
+            if (card) {
+                const newColor = getRandomColor();
+                card.style.backgroundColor = newColor;
+                card.style.transition = 'background-color 0.3s ease';
+                console.log("Цвет изменен на:", newColor);
+            }
+        });
+    });
 });
-
-/*Задание №2*/
-const text = document.querySelector('.section1__text');
-const btn1 = document.querySelector('.section1__btn');
-
-btn1.textContent = 'Изменить цвет';
-
-btn1.addEventListener('click', () => {
-    text.style.color = 'blue';
-    btn1.textContent = 'Цвет изменен';
-}, { once: true }); 
-
-/*Задание №3*/
-const title2 = document.querySelector('.section2__title');
-const btn2 = document.querySelector('.section2__btn');
-
-btn2.textContent = 'Изменить текст';
-title2.textContent = 'Lorem';
-
-btn2.addEventListener('click', () => {
-    title2.textContent = 'Привет, мир!';
-    btn2.textContent = 'Текст изменён';
-}, { once: true }); 
-
-/*Задание №4*/
-const description = document.querySelectorAll('.description');
-
-description.forEach((item) => {
-    item.textContent = 'Изменённый текст';
-});
-
-/*Задание №5*/
-const description1 = document.querySelectorAll('.description1');
-
-description1.forEach((item) => {
-    item.textContent = 'Новый текст';
-});
-
-/*Задание №6*/
-const btn3 = document.querySelector('.btn3');
-const newDiv = document.createElement('div');
-newDiv.textContent = 'Новый элемент';
-
-btn3.textContent = 'Добавить элемент';
-
-btn3.addEventListener('click', () => {
-    document.body.appendChild(newDiv);
-    btn3.textContent = 'Элемент добавлен';
-}, { once: true }); 
-
-/*Задание №7*/
-const description2 = document.querySelector('.description2');
-const btn4 = document.querySelector('.btn4');
-
-btn4.textContent = 'Удалить элемент';
-
-btn4.addEventListener('click', () => {
-    description2.remove()
-    btn3.textContent = 'Элемент удалён';
-}, { once: true }); 
-
-
-
-
-
-
-
-
 

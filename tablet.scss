@@ -1,11 +1,28 @@
-@media (max-width: 1200px ) {
+@media (max-width: 1200px) {
 
-  .main-wrapper {
+    .games-scroll {
+        width: 100%;
+        overflow: hidden;
+        padding: 10px 0;
+        font-weight: 600;
+        font-size: 16px;
+        background-color: #BCEC30;
+        position: absolute;
+        z-index: 3;
+    }
+
+    .scroll-content {
+        display: flex;
+        align-items: center;
+        gap: 27px;
+        padding: 5px 0;
+        animation: scroll-left 12s linear infinite;
+        white-space: nowrap;
 
         &__image {
-            width: 150dvw;
-            height:  60dvh;
-            object-fit: cover;
+            height: 19px;
+            width: 19px;
+            margin-top: 7px;
         }
     }
 
@@ -55,7 +72,7 @@
     .header {
         text-align: center;
         gap: 36px;
-        
+
         &__title {
             font-size: 40px;
             width: 262px;
@@ -80,7 +97,7 @@
         height: 3740px;
         display: flex;
         justify-content: center;
-        
+
         &__image {
             display: none;
         }
@@ -169,22 +186,29 @@
             font-weight: 400;
         }
 
-        &__btn {
-            border: 1px solid black;
-            color: white;
-            background-color: black;
-            border-radius: 60px;
-            display: inline-block;
-            height: 55px;
-            width: 285px;
-            margin-top: 32px;
-            margin-left: 29px;
-            font-weight: 600;
-            font-size: 16px;
-            text-align: center;
-            padding-top: 16px;
-        }
     }
+
+    .product-2__btn,
+    .product-2__btn2,
+    .product-2__btn3,
+    .product-2__btn4,
+    .product-2__btn5,
+    .product-2__btn6 {
+        border: 1px solid black;
+        color: white;
+        background-color: black;
+        border-radius: 60px;
+        display: inline-block;
+        height: 55px;
+        width: 285px;
+        margin-top: 32px;
+        margin-left: 29px;
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        padding-top: 16px;
+    }
+
 
     .bottom {
         display: none;
@@ -205,4 +229,4 @@
         }
     }
 
-}   
+}

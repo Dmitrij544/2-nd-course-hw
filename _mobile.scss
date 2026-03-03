@@ -1,12 +1,28 @@
-@media (max-width: 767px ) {
+@media (max-width: 767px) {
 
-    .main-wrapper {
+    .games-scroll {
+        width: 100%;
+        overflow: hidden;
+        padding: 10px 0;
+        font-weight: 600;
+        font-size: 16px;
+        background-color: #BCEC30;
+        position: absolute;
+        z-index: 3;
+    }
+
+    .scroll-content {
+        display: flex;
+        align-items: center;
+        gap: 27px;
+        padding: 5px 0;
+        animation: scroll-left 12s linear infinite;
+        white-space: nowrap;
 
         &__image {
-            width: 150dvw;
-            height: auto;
-            min-height: 6dvh;
-            object-fit: cover;
+            height: 19px;
+            width: 19px;
+            margin-top: 7px;
         }
     }
 
@@ -56,7 +72,7 @@
     .header {
         text-align: center;
         gap: 36px;
-        
+
         &__title {
             font-size: 40px;
             width: 262px;
@@ -81,7 +97,7 @@
         height: 3740px;
         display: flex;
         justify-content: center;
-        
+
         &__image {
             display: none;
         }
@@ -127,7 +143,6 @@
     }
 
     .product-2 {
-        background-color: white;
         border-radius: 30px;
         width: 378px;
         height: 528px;
@@ -170,21 +185,84 @@
             font-weight: 400;
         }
 
-        &__btn {
-            border: 1px solid black;
-            color: white;
-            background-color: black;
-            border-radius: 60px;
-            display: inline-block;
-            height: 55px;
-            width: 285px;
-            margin-top: 32px;
-            margin-left: 29px;
-            font-weight: 600;
-            font-size: 16px;
+    }
+
+    .product-3__btn,
+    .product-3__btn2,
+    .product-3__btn3,
+    .product-3__btn4,
+    .product-3__btn5,
+    .product-3__btn6 {
+        border: 1px solid black;
+        color: white;
+        background-color: black;
+        border-radius: 60px;
+        display: inline-block;
+        height: 55px;
+        width: 285px;
+        margin-top: 32px;
+        margin-left: 29px;
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        padding-top: 16px;
+    }
+
+    .game-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(5px);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+
+        &__content {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
             text-align: center;
-            padding-top: 16px;
+            position: relative;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin: 0;
         }
+
+        &__close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        &__input-group {
+            margin: 20px 0;
+        }
+
+        &__input-group input {
+            padding: 10px;
+            width: 70px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin-right: 10px;
+        }
+
+        &__input-group button {
+            padding: 10px 20px;
+            background: #000;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
     }
 
     .bottom {
@@ -204,6 +282,33 @@
         &__title {
             font-size: 16px;
         }
+    }
+
+    .math-modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(5px);
+    }
+
+    .reverse-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
     }
 
 }
