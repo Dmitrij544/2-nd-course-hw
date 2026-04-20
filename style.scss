@@ -22,6 +22,8 @@ body {
     &__image {
         position: absolute;
         z-index: 3;
+        width: 167vw;  
+        height: 90px; 
     }
 }
 
@@ -197,10 +199,8 @@ body {
 
     &__product-box-2 {
         display: none;
-        margin-top: 145px;
     }
 }
-
 
 .product {
     background-color: white;
@@ -242,9 +242,114 @@ body {
         margin-top: 16px;
         font-size: 32px;
         font-weight: 700;
-        color: black
+        color: black;
+    }
+}
+
+.bottom {
+    background-image: url(./img/Rectangle.jpg);
+    height: 3500px;
+    padding-top: 46px;
+    position: relative; 
+
+    &__image {
+        margin-top: 53px;
+        position: absolute;
+        margin-left: 1158px;
     }
 
+    &__image-2 {
+        position: absolute;
+        margin-top: 86px;
+        margin-left: 1200px;
+    }
+
+    &__image-3 {
+        position: absolute;
+        margin-top: 3306px;
+        margin-left: 1200px;
+    }
+
+    &__image-4 {
+        position: absolute;
+        margin-top: 3357px;
+        margin-left: 1142px;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 64px;
+        color: white;
+        margin-bottom: 72px;
+    }
+
+    &__product-box {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+}
+
+.product-3 {
+    display: flex;
+    border-radius: 30px;
+    background-color: white;
+    width: 1200px;
+    height: 500px;
+
+    &__btn-box {
+        display: flex;
+        flex-direction: column;
+        padding: 48px 48px;
+        gap: 36px;
+    }
+
+    &__name-box {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 504px;
+    }
+
+    &__name {
+        font-weight: 700;
+        font-size: 48px;
+    }
+
+    &__description {
+        font-weight: 400;
+        font-size: 24px;
+    }
+     
+    &__btn {
+        width: 247px;
+        height: 66px;
+        border-radius: 60px;
+        background-color: black;
+        color: white;
+        font-size: 24px;
+        font-weight: 600;
+        text-align: center;
+        padding-top: 16px;
+    }
+
+    &__btn:hover {
+        color: black;
+        background-color: white;
+        border: 1px solid black;
+    }
+}
+
+.footer {
+    background-image: url(./img/Rectangle.svg);
+    height: 150px;
+    text-align: center;
+    padding: 64px;
+
+    &__title {
+        font-weight: 600px;
+        font-size: 24px;
+    }
 }
 
 @import "mobile";
