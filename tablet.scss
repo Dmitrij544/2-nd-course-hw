@@ -1,4 +1,4 @@
-@media (max-width: 767px) {
+@media (max-width: 1200px) {
 
     .games-scroll {
         width: 100%;
@@ -143,6 +143,7 @@
     }
 
     .product-2 {
+        background-color: white;
         border-radius: 30px;
         width: 378px;
         height: 528px;
@@ -187,12 +188,12 @@
 
     }
 
-    .product-3__btn,
-    .product-3__btn2,
-    .product-3__btn3,
-    .product-3__btn4,
-    .product-3__btn5,
-    .product-3__btn6 {
+    .product-2__btn,
+    .product-2__btn2,
+    .product-2__btn3,
+    .product-2__btn4,
+    .product-2__btn5,
+    .product-2__btn6 {
         border: 1px solid black;
         color: white;
         background-color: black;
@@ -208,62 +209,6 @@
         padding-top: 16px;
     }
 
-    .game-modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.7);
-        backdrop-filter: blur(5px);
-        z-index: 1000;
-        justify-content: center;
-        align-items: center;
-
-        &__content {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            position: relative;
-            width: 90%;
-            max-width: 400px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            margin: 0;
-        }
-
-        &__close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 28px;
-            cursor: pointer;
-            color: #333;
-        }
-
-        &__input-group {
-            margin: 20px 0;
-        }
-
-        &__input-group input {
-            padding: 10px;
-            width: 70px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            margin-right: 10px;
-        }
-
-        &__input-group button {
-            padding: 10px 20px;
-            background: #000;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-    }
 
     .bottom {
         display: none;
@@ -282,33 +227,6 @@
         &__title {
             font-size: 16px;
         }
-    }
-
-    .math-modal-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.85);
-        z-index: 1000;
-        justify-content: center;
-        align-items: center;
-        backdrop-filter: blur(5px);
-    }
-
-    .reverse-modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        z-index: 1000;
-        align-items: center;
-        justify-content: center;
     }
 
 }

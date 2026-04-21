@@ -1,222 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <section class="main-wrapper">
-            <section class="top">
-                <section class="top__content center">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <section class="main-wrapper">
+        <section class="top">
+            <section class="top__content center">
                 <img class="top__image-3" src="./img/Star-3.svg" alt="star">
                 <img class="top__image" src="./img/Star-2.svg" alt="star">
                 <img class="top__image-5" src="./img/Star-5.svg" alt="star">
                 <img class="top__image-4" src="./img/Star-4.svg" alt="star">
                 <img class="top__image-1" src="./img/Star-1.svg" alt="star">
-                <img class="top__image-6" src="./img/Star-9.svg" alt="star">    
-                    <header class="header">
-                        <section class="header__top">
-                            <p class="header__title">
-                                Добро пожаловать<br>
-                                на мой сайт мини-игр
-                            </p>
-                            <p class="header__description">Тебе предстоит пройти несколько увлекательных игр. Если готов, нажимай <b>«Поехали!»</b> и <b>приступай</b>.</p>
-                        </section>
-                        <a href="#midle" class="header__btn">Поехали!</a>
-                    </header>
+                <img class="top__image-6" src="./img/Star-9.svg" alt="star">
+                <header class="header">
+                    <section class="header__top">
+                        <p class="header__title">
+                            Добро пожаловать<br>
+                            на мой сайт мини-игр
+                        </p>
+                        <p class="header__description">Тебе предстоит пройти несколько увлекательных игр. Если готов, нажимай <b>«Поехали!»</b> и <b>приступай</b>.</p>
+                    </section>
+                    <a href="#midle" class="header__btn">Поехали!</a>
+                </header>
+            </section>
+        </section>
+        <div class="games-scroll">
+            <div class="scroll-content">
+                <span>викторина</span>
+                <span><img class="scroll-content__image" src="./img/Star-14.svg" alt="star"></span>
+                <span>угадай число</span>
+                <span><img class="scroll-content__image" src="./img/Star-14.svg" alt="star"></span>
+                <span>переверни текст</span>
+                <span><img class="scroll-content__image" src="./img/Star-14.svg" alt="star"></span>
+                <span>простая арифметика</span>
+                <span><img class="scroll-content__image" src="./img/Star-14.svg" alt="star"></span>
+                <span>камень, ножницы, бумага</span>
+                <span><img class="scroll-content__image" src="./img/Star-14.svg" alt="star"></span>
+                <span>генератор случайных цветов</span>
+                <span><img class="scroll-content__image" src="./img/Star-14.svg" alt="star"></span>
+            </div>
+        </div>
+        <section id="midle" class="midle center">
+            <img class="midle__image" src="./img/Star-6.svg" alt="star">
+            <img class="midle__image-7" src="./img/Star-7.svg" alt="star">
+            <img class="midle__image-8" src="./img/Star-8.svg" alt="star">
+            <section class="midle__box">
+                <p class="midle__mobile">Мини-игры</p>
+                <p class="midle__title">Об играх</p>
+                <p class="midle__description">
+                    В моей коллекции предоставлено 6 игр на разные темы.<br>
+                    Игры несложные — в них может поиграть каждый.<br>
+                    Все игры доступны для пользования.
+                </p>
+            </section>
+            <section class="midle__product-box">
+                <section class="midle__position">
+                    <a class="midle__link" href="#article">
+                        <article class="product">
+                            <img class="product__image" src="./img/namber-1.svg" alt="star">
+                            <section class="product__name-box">
+                                <p class="product__namber">Игрa № 1</p>
+                                <p class="product__name">Угадай число</p>
+                            </section>
+                        </article>
+                    </a>
+                    <a class="midle__link" href="#article-4">
+                        <article class="product product_2 product_btm">
+                            <img class="product__image" src="./img/namber-4.png" alt="star">
+                            <section class="product__name-box">
+                                <p class="product__namber">Игрa №4</p>
+                                <p class="product__name">Камень,<br>ножницы,<br>бумага</p>
+                            </section>
+                        </article>
+                    </a>
+                </section>
+                <section class="midle__position">
+                    <a class="midle__link" href="#article-2">
+                        <article class="product product_1">
+                            <img class="product__image" src="./img/namber-2.svg" alt="star">
+                            <section class="product__name-box">
+                                <p class="product__namber product__namber_1">Игрa № 2</p>
+                                <p class="product__name">Простая арифметика</p>
+                            </section>
+                        </article>
+                    </a>
+                    <a class="midle__link" href="#article-5">
+                        <article class="product product_1">
+                            <img class="product__image" src="./img/namber-5.svg" alt="star">
+                            <section class="product__name-box">
+                                <p class="product__namber">Игрa №5</p>
+                                <p class="product__name">Простая<br> викторина</p>
+                            </section>
+                        </article>
+                    </a>
+                </section>
+                <section class="midle__position">
+                    <a class="midle__link" href="#article-3">
+                        <article class="product">
+                            <img class="product__image" src="./img/namber-3.svg" alt="star">
+                            <section class="product__name-box">
+                                <p class="product__namber">Игрa №3</p>
+                                <p class="product__name">Переверни текст</p>
+                            </section>
+                        </article>
+                    </a>
+                    <a class="midle__link" href="#article-6">
+                        <article class="product product_2">
+                            <img class="product__image" src="./img/namber-6.svg" alt="star">
+                            <section class="product__name-box">
+                                <p class="product__namber">Игрa №6</p>
+                                <p class="product__name">Генератор<br>случайных<br>цветов</p>
+                            </section>
+                        </article>
+                    </a>
                 </section>
             </section>
-            <img class="main-wrapper__image" src="./img/Frame.jpg" alt="star">
-            <section id="midle" class="midle center">
-                <img class="midle__image" src="./img/Star-6.svg" alt="star">
-                <img class="midle__image-7" src="./img/Star-7.svg" alt="star">
-                <img class="midle__image-8" src="./img/Star-8.svg" alt="star">
-                <section class="midle__box">
-                    <p class="midle__mobile">Мини-игры</p>
-                    <p class="midle__title">Об играх</p>
-                    <p class="midle__description">
-                        В моей коллекции предоставлено 6 игр на разные темы.<br>
-                        Игры несложные — в них может поиграть каждый.<br>
-                        Все игры доступны для пользования.
-                    </p>
-                </section>
-                <section class="midle__product-box">
-                    <section class="midle__position">
-                        <a class="midle__link" href="">
-                            <article class="product">
-                                <img class="product__image" src="./img/namber-1.svg" alt="star">
-                                <section class="product__name-box">
-                                    <p class="product__namber">Игрa № 1</p>
-                                    <p class="product__name">Угадай число</p>
-                                </section>
-                            </article>
-                        </a>
-                        <a class="midle__link" href="">
-                            <article class="product product_2 product_btm">
-                                <img class="product__image" src="./img/namber-4.png" alt="star">
-                                <section class="product__name-box">
-                                    <p class="product__namber">Игрa №4</p>
-                                    <p class="product__name">Камень,<br>ножницы,<br>бумага</p>
-                                </section>
-                            </article>
-                        </a>
+            <section class="midle__product-box-2">
+                <article class="product-2">
+                    <img class="product-2__image" src="./img/namber-1.svg" alt="star">
+                    <section class="product-2__name-box">
+                        <p class="product-2__name">Угадай число</p>
+                        <p class="product-2__description">Попробуй угадать случайное<br>число от 1 до 100.</p>
                     </section>
-                    <section class="midle__position">
-                        <a class="midle__link" href="">
-                            <article class="product product_1">
-                                <img class="product__image" src="./img/namber-2.svg" alt="star">
-                                <section class="product__name-box">
-                                    <p class="product__namber product__namber_1">Игрa № 2</p>
-                                    <p class="product__name">Простая арифметика</p>
-                                </section>
-                            </article>
-                        </a>
-                        <a class="midle__link" href="">
-                            <article class="product product_1">
-                                <img class="product__image" src="./img/namber-5.svg" alt="star">
-                                <section class="product__name-box">
-                                    <p class="product__namber">Игрa №5</p>
-                                    <p class="product__name">Простая<br> викторина</p>
-                                </section>
-                            </article>
-                        </a>
+                    <a href="javascript:void(0)" class="product-2__btn">Играть!</a>
+                </article>
+                <article class="product-2 product-2_1">
+                    <img class="product-2__image" src="./img/namber-2.svg" alt="star">
+                    <section class="product-2__name-box">
+                        <p class="product-2__name">Простая арифметика</p>
+                        <p class="product-2__description">Попробуй решить простые арифметические задачи.</p>
                     </section>
-                    <section class="midle__position">
-                        <a class="midle__link" href="">
-                            <article class="product">
-                                <img class="product__image" src="./img/namber-3.svg" alt="star">
-                                <section class="product__name-box">
-                                    <p class="product__namber">Игрa №3</p>
-                                    <p class="product__name">Переверни текст</p>
-                                </section>
-                            </article>
-                        </a>
-                        <a class="midle__link" href="">
-                            <article class="product product_2">
-                                <img class="product__image" src="./img/namber-6.svg" alt="star">
-                                <section class="product__name-box">
-                                    <p class="product__namber">Игрa №6</p>
-                                    <p class="product__name">Генератор<br>случайных<br>цветов</p>
-                                </section>
-                            </article>
-                        </a>
+                    <a href="" class="product-2__btn2">Играть!</a>
+                </article>
+                <article class="product-2 product-2_1">
+                    <img class="product-2__image" src="./img/namber-3.svg" alt="star">
+                    <section class="product-2__name-box">
+                        <p class="product-2__name">Переверни<br>текст</p>
+                        <p class="product-2__description">Попробуй ввести текст, который будет перевёрнут.</p>
                     </section>
-                </section>
-                <section class="midle__product-box-2">
-                    <article class="product-2">
-                        <img class="product-2__image" src="./img/namber-1.svg" alt="star">
-                        <section class="product-2__name-box">
-                            <p class="product-2__name">Угадай число</p>
-                            <p class="product-2__description">Попробуй угадать случайное<br>число от 1 до 100.</p>
-                        </section>
-                        <a href="" class="product-2__btn">Играть!</a>
-                    </article>
-                    <article class="product-2 product-2_1">
-                        <img class="product-2__image" src="./img/namber-2.svg" alt="star">
-                        <section class="product-2__name-box">
-                            <p class="product-2__name">Простая арифметика</p>
-                            <p class="product-2__description">Попробуй решить простые арифметические задачи.</p>
-                        </section>
-                        <a href="" class="product-2__btn">Играть!</a>
-                    </article>
-                    <article class="product-2 product-2_1">
-                        <img class="product-2__image" src="./img/namber-3.svg" alt="star">
-                        <section class="product-2__name-box">
-                            <p class="product-2__name">Переверни<br>текст</p>
-                            <p class="product-2__description">Попробуй ввести текст, который будет перевёрнут.</p>
-                        </section>
-                        <a href="" class="product-2__btn">Играть!</a>
-                    </article>
-                    <article class="product-2 product-2_2 product-2_btm">
-                        <img class="product-2__image" src="./img/namber-4.png" alt="star">
-                        <section class="product-2__name-box">
-                            <p class="product-2__name">Камень,<br>ножницы,<br>бумага</p>
-                            <p class="product-2__description">Сыграй в популярную игру<br>против компьютера.</p>
-                        </section>
-                        <a href="" class="product-2__btn">Играть!</a>
-                    </article>
-                    <article class="product-2 product-2_1">
-                        <img class="product-2__image" src="./img/namber-5.svg" alt="star">
-                        <section class="product-2__name-box">
-                            <p class="product-2__name">Простая<br> викторина</p>
-                            <p class="product-2__description">Отвечай на вопросы викторины<br>с вариантами ответов.</p>
-                        </section>
-                        <a href="" class="product-2__btn">Играть!</a>
-                    </article>
-                    <article class="product-2 product-2_3">
-                        <img class="product-2__image" src="./img/namber-6.svg" alt="star">
-                        <section class="product-2__name-box">
-                            <p class="product-2__name">Генератор<br>случайных<br>цветов</p>
-                            <p class="product-2__description">Игра, в которой при клике<br>на кнопку фон страницы<br>меняется на случайный.</p>
-                        </section>
-                        <a href="" class="product-2__btn">Играть!</a>
-                    </article>
-                </section>
-            </section> 
+                    <a href="" class="product-2__btn3">Играть!</a>
+                </article>
+                <article class="product-2 product-2_2 product-2_btm">
+                    <img class="product-2__image" src="./img/namber-4.png" alt="star">
+                    <section class="product-2__name-box">
+                        <p class="product-2__name">Камень,<br>ножницы,<br>бумага</p>
+                        <p class="product-2__description">Сыграй в популярную игру<br>против компьютера.</p>
+                    </section>
+                    <a href="" onclick="openRPS()" class="product-2__btn4">Играть!</a>
+                </article>
+                <article class="product-2 product-2_1">
+                    <img class="product-2__image" src="./img/namber-5.svg" alt="star">
+                    <section class="product-2__name-box">
+                        <p class="product-2__name">Простая<br> викторина</p>
+                        <p class="product-2__description">Отвечай на вопросы викторины<br>с вариантами ответов.</p>
+                    </section>
+                    <a href="" class="product-2__btn6">Играть!</a>
+                </article>
+                <article class="product-2 product-2_3">
+                    <img class="product-2__image" src="./img/namber-6.svg" alt="star">
+                    <section class="product-2__name-box">
+                        <p class="product-2__name">Генератор<br>случайных<br>цветов</p>
+                        <p class="product-2__description">Игра, в которой при клике<br>на кнопку фон страницы<br>меняется на случайный.</p>
+                    </section>
+                    <a href="javascript:void(0)" class="product-2__btn5 js-change-b">Играть!</a>
+                </article>
+            </section>
         </section>
-        <script>
-            /*Задание №1*/
-            let a = 10;
-            alert(a);
-            a = 20;
-            alert(a);
+        <section class="bottom center">
+            <img class="bottom__image" src="./img/Star-10.svg" alt="star">
+            <img class="bottom__image-2" src="./img/Star-11.svg" alt="star">
+            <img class="bottom__image-3" src="./img/Star-12.svg" alt="star">
+            <img class="bottom__image-4" src="./img/Star-13.svg" alt="star">
+            <section class="bottom__box">
+                <p class="bottom__title">Мини-игры</p>
+            </section>
+            <section class="bottom__product-box">
+                <article id="article" class="product-3">
+                    <section class="product-3__btn-box">
+                        <section class="product-3__name-box">
+                            <p class="product-3__name">Угадай число</p>
+                            <p class="product-3__description">Попробуй угадать случайное<br>число от 1 до 100.</p>
+                        </section>
+                        <a href="javascript:void(0)" class="product-3__btn">Играть!</a>
+                    </section>
+                    <img src="./img/namber-7.svg" alt="star">
+                </article>
+                <article id="article-2" class="product-3 product-3_1">
+                    <img src="./img/namber-8.svg" alt="star">
+                    <section class="product-3__btn-box">
+                        <section class="product-3__name-box">
+                            <p class="product-3__name">Простая арифметика</p>
+                            <p class="product-3__description">Попробуй решить простые арифметические задачи.</p>
+                        </section>
+                        <a href="#" class="product-3__btn2">Играть!</a>
+                    </section>
+                </article>
+                <article id="article-3" class="product-3 product-3_1">
+                    <section class="product-3__btn-box">
+                        <section class="product-3__name-box">
+                            <p class="product-3__name">Переверни<br>текст</p>
+                            <p class="product-3__description">Попробуй ввести текст, который<br> будет перевёрнут.</p>
+                        </section>
+                        <a href="javascript:void(0)" class="product-3__btn3">Играть!</a>
+                    </section>
+                    <img src="./img/namber-9.svg" alt="star">
+                </article>
+                <article id="article-4" class="product-3 product-3_2 product-3_btm">
+                    <img src="./img/namber-10.png" alt="star">
+                    <section class="product-3__btn-box">
+                        <section class="product-3__name-box">
+                            <p class="product-3__name">Камень,<br>ножницы,<br>бумага</p>
+                            <p class="product-3__description">Сыграй в популярную игру<br>против компьютера.</p>
+                        </section>
+                        <a href="javascript:void(0)" onclick="openRPS()" class="product-3__btn4">Играть!</a>
+                    </section>
+                </article>
+                <article id="article-5" class="product-3 product-3_1">
+                    <section class="product-3__btn-box">
+                        <section class="product-3__name-box">
+                            <p class="product-3__name">Простая<br> викторина</p>
+                            <p class="product-3__description">Отвечай на вопросы викторины<br>с вариантами ответов.</p>
+                        </section>
+                        <a href="javascript:void(0)" class="product-3__btn6">Играть!</a>
+                    </section>
+                    <img src="./img/namber-11.svg" alt="star">
+                </article>
+                <article id="article-6" class="product-3 product-3_3">
+                    <img src="./img/namber-12.svg" alt="star">
+                    <section class="product-3__btn-box">
+                        <section class="product-3__name-box">
+                            <p class="product-3__name">Генератор<br>случайных<br>цветов</p>
+                            <p class="product-3__description">Игра, в которой при клике на кнопку фон страницы меняется на случайный.</p>
+                        </section>
+                        <a href="" class="product-3__btn5">Играть!</a>
+                    </section>
+                </article>
+            </section>
+        </section>
+        <footer class="footer">
+            <p class="footer__title"><b>Все права защищены.</b></p>
+        </footer>
+    </section>
+    <div class="game-modal">
+        <div class="game-modal__content">
+            <span class="game-modal__close">&times;</span>
+            <h2>Угадай число</h2>
+            <p>Я загадал число от 1 до 100.</p>
 
-            /*Задание №2*/
-            let firstIphoneYear = 2007;
-            alert(firstIphoneYear);
+            <div class="game-modal__input-group">
+                <input class="game-modal__input" type="number" placeholder="50" min="1" max="100">
+                <button class="game-modal__btn">Проверить</button>
+            </div>
 
-            /*Задание №3*/
-            let creatorName = "Brendan Eich";
-            alert(creatorName);
+            <p class="game-modal__text"></p>
+            <button class="game-modal__btn2" style="display:none;">Играть снова</button>
+        </div>
+    </div>
+    <div class="math-modal-overlay">
+        <div class="math-modal-content">
+            <span class="math-close">&times;</span>
+            <h2 class="math-title">Реши задачу</h2>
+            <div class="math-question"></div>
+            <input type="number" class="math-input" placeholder="?">
+            <button id="math-check" class="math-submit-btn">Проверить</button>
+            <p class="math-message"></p>
+        </div>
+    </div>
+    <div class="reverse-modal">
+        <div style="background: #fff; padding: 25px; border-radius: 15px; text-align: center; color: #000; width: 300px; position: relative;">
+            <h3 style="margin-top: 0;">Переверни текст</h3>
+            <input type="text" class="reverseInput" placeholder="Введите текст" style="width: 100%; padding: 10px; margin: 15px 0; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+            <button class="reverseAction" style="border: none; cursor: pointer; width: 100%;">Перевернуть</button>
 
-            /*Задание №4*/
-            let nam1 = 10;
-            let nam2 = 2;
-            alert(nam1 + nam2);
-            alert(nam1 - nam2);
-            alert(nam1 * nam2);
-            alert(nam1 / nam2);
+            <div style="margin-top: 15px; background: #f0f0f0; padding: 10px; border-radius: 5px; min-height: 20px;">
+                <p class="reverseResult" style="margin: 0; font-weight: bold; word-break: break-all; color: #333;"></p>
+            </div>
 
-            /*Задание №5*/
-            let result = 2 ** 5; 
-            alert(result);
-            
-            /*Задание №6*/
-            let a1 = 9;
-            let b = 2;
-            let remainder = a1 % b;
-            alert(remainder);
-            
-            /*Задание №7*/
-            let num = 1;
-            num += 5;
-            num -= 3;
-            num *= 7; 
-            num /= 3;
-            num++;    
-            num--;   
-            alert(num); 
+            <button class="reverseClose" style="margin-top: 15px; background: none; border: none; color: #777; cursor: pointer; text-decoration: underline;">Закрыть</button>
+        </div>
+    </div>
+    <div id="rpsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeRPS()">&times;</span>
+            <h2>Камень, Ножницы, Бумага</h2>
+            <p>Сделайте ваш ход:</p>
+            <div class="choices">
+                <button onclick="playRPS('камень')">Камень</button>
+                <button onclick="playRPS('ножницы')">Ножницы</button>
+                <button onclick="playRPS('бумага')">Бумага</button>
+            </div>
+            <div id="rpsResult" class="result-area"></div>
+        </div>
+    </div>
+    <div id="quiz-modal" class="quiz-modal-overlay">
+        <div class="quiz-modal-content">
+            <h2 id="quiz-question">Вопрос появится здесь</h2>
+            <div id="quiz-options" class="quiz-options-container"></div>
+            <p id="quiz-message" class="quiz-message"></p>
+            <button id="quiz-close" class="quiz-close-link">Закрыть</button>
+        </div>
+    </div>
+</body>
 
-            /*Задание №8*/
-            let age = prompt("Сколько вам лет?");
-            alert(age);
-
-           /*Задание №9*/
-           let user = {
-           name: "Иван",
-           age: 30,
-           isAdmin: true 
-           };
-
-           /*Задание №10*/
-           let userName = prompt("Как вас зовут?");
-           let greetingMessage = `Привет, ${userName}!`;
-           alert(greetingMessage);
-        </script>
-    </body>
 </html>
