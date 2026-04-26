@@ -24,7 +24,7 @@ body {
   padding: 10px 0;
   font-weight: 600;
   font-size: 30px;
-  background-color: #BCEC30;
+  background-color: #bcec30;
   position: absolute;
   z-index: 3;
 }
@@ -190,7 +190,7 @@ body {
   z-index: 3;
   display: flex;
   -moz-column-gap: 32px;
-       column-gap: 32px;
+  column-gap: 32px;
 }
 .midle__position {
   display: flex;
@@ -224,7 +224,7 @@ body {
   margin-top: 32px;
 }
 .product__namber {
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   width: 108px;
   height: 36px;
   font-weight: 500;
@@ -598,7 +598,7 @@ body {
     padding: 10px 0;
     font-weight: 600;
     font-size: 16px;
-    background-color: #BCEC30;
+    background-color: #bcec30;
     position: absolute;
     z-index: 3;
   }
@@ -864,7 +864,7 @@ body {
     padding: 10px 0;
     font-weight: 600;
     font-size: 16px;
-    background-color: #BCEC30;
+    background-color: #bcec30;
     position: absolute;
     z-index: 3;
   }
@@ -1048,4 +1048,4 @@ body {
   .footer__title {
     font-size: 16px;
   }
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
