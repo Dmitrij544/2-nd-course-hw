@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const quiz = [
     {
-      question: "Какой цвет небо?",
+      question: "Какой цвет у неба?",
       options: ["1. Красный", "2. Синий", "3. Зеленый"],
       correctAnswer: 2,
     },
