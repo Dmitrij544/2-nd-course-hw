@@ -1,11 +1,10 @@
-@media (max-width: 767px ) {
+@media (max-width: 1200px ) {
 
-    .main-wrapper {
+  .main-wrapper {
 
         &__image {
             width: 150dvw;
-            height: auto;
-            min-height: 6dvh;
+            height:  60dvh;
             object-fit: cover;
         }
     }
@@ -206,4 +205,4 @@
         }
     }
 
-}
+}   
